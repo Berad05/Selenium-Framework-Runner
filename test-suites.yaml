@@ -1,0 +1,20 @@
+services:
+  vendor-portal:
+    image:  dockervsb/selenium_framework
+    environment:
+      - BROWSER=chrome
+      - THREAD_COUNT=2
+      - HUB_HOST=selenium-hub
+      - TEST_SUITE=vendor-portal.xml
+    volumes:
+      - ./output/vendor-portal:/home/selenium-docker/test-output
+
+  flight-reservation:
+    image:  dockervsb/selenium_framework
+    environment:
+      - BROWSER=firefox
+      - THREAD_COUNT=3
+      - HUB_HOST=selenium-hub
+      - TEST_SUITE=flight-reservation.xml
+    volumes:
+      - ./output/flight-reservation:/home/selenium-docker/test-output
