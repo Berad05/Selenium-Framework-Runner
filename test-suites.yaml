@@ -2,7 +2,7 @@ services:
   vendor-portal:
     image:  dockervsb/selenium_framework
     environment:
-      - BROWSER=chrome
+      - BROWSER
       - THREAD_COUNT=2
       - HUB_HOST=selenium-hub
       - TEST_SUITE=vendor-portal.xml
@@ -12,7 +12,7 @@ services:
   flight-reservation:
     image:  dockervsb/selenium_framework
     environment:
-      - BROWSER=firefox
+      - BROWSER
       - THREAD_COUNT=3
       - HUB_HOST=selenium-hub
       - TEST_SUITE=flight-reservation.xml
